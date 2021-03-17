@@ -16,7 +16,6 @@ app = Flask(__name__)
 def run_github_webhook():
     data = json.loads(request.data)
     print(request.data)
-    print(data)
     return
 
 
