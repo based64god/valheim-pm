@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-import flask
+from flask import Flask, request
 import click
 import json
 import os
 
 secret=os.getenv('SECRET')
 
-app = flask.Flask(__name__)
+app = Flask(__name__)
 
 @click.command()
 @click.option('--package-dir', default=os.getcwd(), prompt='system path to package dir', 
@@ -14,7 +14,7 @@ app = flask.Flask(__name__)
 
 @app.route("/", methods=['POST'])        # Standard Flask endpoint
 def run_github_webhook():
-    data = json.loads(flask.request.get_json())
+    data = json.loads(request.get_json())
     print(flask.request.data)
     print(data)
     return
