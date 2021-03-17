@@ -12,7 +12,7 @@ app = flask.Flask(__name__)
 @click.option('--package-dir', default=os.getcwd(), prompt='system path to package dir', 
     help='an absolute path to where your valheim packages should be installed')
 
-@app.route("/")        # Standard Flask endpoint
+@app.route("/", methods=['POST'])        # Standard Flask endpoint
 def run_github_webhook():
     data = json.loads(flask.request.get_json())
     print(flask.request.data)
