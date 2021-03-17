@@ -15,7 +15,7 @@ app = Flask(__name__)
 @app.route("/", methods=['POST'])        # Standard Flask endpoint
 def run_github_webhook():
     parsed = json.loads(request.data)
-    print(parsed['clone_url'])
+    print(parsed['repository']['clone_url'])
     return 'ok'
 
 
