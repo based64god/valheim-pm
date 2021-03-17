@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import flask
 import click
+import json
 import os
 
 secret=os.getenv('SECRET')
