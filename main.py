@@ -3,6 +3,8 @@ import flask
 import click
 import os
 
+secret=os.getenv('SECRET')
+
 app = flask.Flask(__name__)
 
 @click.command()
