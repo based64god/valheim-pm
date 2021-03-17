@@ -14,7 +14,7 @@ app = flask.Flask(__name__)
 
 @app.route("/")        # Standard Flask endpoint
 def run_github_webhook():
-    data = json.loads(request.data)
+    data = json.loads(flask.request.data)
     print(data)
     return
 
